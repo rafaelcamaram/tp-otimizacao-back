@@ -27,6 +27,8 @@ router.get('/', function(req, res, next) {
 
   const response = glpk.solve(lp, glpk.GLP_MSG_ALL);
   res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   res.send(response);
 });
 
